@@ -1,0 +1,105 @@
+:document-title: rbgo-array: Line m up those data items inside these arrays!
+:table-caption: off
+
+= *rbgo-array*
+
+[.big]"`**_Line m up those data items inside these arrays!_**`"
+
+
+[caption="" cols="25h,~m" frame=all grid=all width=100%]
+|===
+
+|last update
+|20230716
+
+|language
+|C++
+
+|namespace
+|rbgo
+
+|library ref
+|rbgotech/rbgo-array
+
+|entry points
+|rbgo-array.h
+
+|dependencies
+|rbgotech/rbgo-types
+
+|environment
+|VSCode, Platformio
+
+|platform
+|all
+
+|framework
+|all
+
+|call deps
+|malloc.h(malloc, realloc, free);
+|===
+
+=== Description
+
+This repository represents a library for all sorts of arrays.
+
+.Functionality
+[options="header" caption="" cols="4h,6m" frame=all grid=all width=100%]
+|===
+|function
+|description
+
+2+^m|`#class VPArray#`
+2+d|
+
+This is a void pointer array, which means you can store pointers to objects of
+any type, and on access cast them back to the type on the callers side.
+
+Memory management is done with C functions malloc, realloc and free.
+The core data member `void **array`, will be expanded or shrunken
+using `realloc` for each added or removed pointer.
+
+The following table shows the available methods.
+
+| VPArray();
+| Constructor.
+
+| ~VPArray();
+| Destructor; calls `reset`.
+
+|bool append(VPArray *vpa);
+|Append given vpa to this vpa.
+
+|Tu32 arrlen();
+|Return the length of this array.
+
+|void* arrval(Tu32 i);
+|Return the value at [i].
+
+|void* iterate(bool init=false);
+|Return the next pointer on each call.
+
+|void* delone(Tu32 i);
+|Move slot following [i] down -1, shrink the array -1.
+
+|void* delfun(Tu32 i);
+|Set slot at [i] to zero, repeat for selected,  when done call defrag.
+
+|void defrag();
+|Scan for null slots, move value slots down, shrink the array.
+
+|bool push(void *vp);
+|Expand array +1, store vp in last slot.
+
+|void* pop();
+|Shrink array -1, return last value.
+
+|void reverse();
+|Reverses the array.
+
+|void reset();
+|Free the internal void pointer array; will not free the pointers inserted by
+the caller.
+
+|===

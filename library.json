@@ -1,0 +1,23 @@
+{
+	"name": "rbgotech/rbgo-array",
+	"version": "0.0.1",
+	"description": "Line m up those data items inside these arrays!",
+	"keywords": "data structure, array, dynamic array, dynamic allocation, buffers",
+	"repository":{
+		"type": "git",
+		"url": "https://github.com/rbgotech-cpp-abc-libs/rbgo-array.git"
+	},
+	"authors":[{
+		"name": "Robert Goossens (rbgo)",
+		"email": "rbgo.web@gmail.com",
+		"homepage": "https://github.com/rbgo",
+		"maintainer": true
+	}],
+	"license": "MIT",
+	"homepage": "https://github.com/rbgotech-cpp-abc-libs/rbgo-array",
+	"dependencies":{
+		"rbgotech/rbgo-types": "*"
+	},
+	"platforms": "*",
+	"frameworks": "*"
+}
